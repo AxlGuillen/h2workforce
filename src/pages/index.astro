@@ -4,98 +4,91 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+/* import Features2 from '~/components/widgets/Features2.astro'; */
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+/* import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro'; */
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+/* import Stats from '~/components/widgets/Stats.astro'; */
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'H2WorkForce',
   ignoreTitleTemplate: true,
 };
+
+import heroImage from '~/assets/images/hero-image.avif';
+import reclu from '~/assets/images/reclu.avif';
+import deal from '~/assets/images/deal.avif';
+import deal2 from '~/assets/images/deal2.avif';
+import deal3 from '~/assets/images/farmer.avif';
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-  >
+  <Hero image={{ src: heroImage, alt: 'H2WorkForce' }}>
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      We connect <span class="hidden xl:inline">Mexican workers with</span>
+      <span class="text-accent dark:text-white"> employers in the U.S. and Canada</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        <span class="font-semibold">H2WorkForce</span> is a binational firm specializing in the legal and professional recruitment
+        of temporary workers, with a focus on safety, transparency, and social responsibility.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Reliable, safe, and human recruitment.</span>
+      Ideal for the agricultural, livestock, construction, healthcare, and professional services sectors.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <Note
+    title="Philosophy:"
+    description="Humanism, legality, and commitment to dignified and safe employment on a binational level."
+  />
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+    tagline="Our Pillars"
+    title="What Sets H2WorkForce Apart"
+    subtitle="A binational company committed to legal, safe, and human processes that connect Mexican workers with employers in the U.S. and Canada."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+        title: 'Comprehensive Recruitment Process',
+        description: 'From identifying needs to the worker’s arrival, ensuring legality and efficiency.',
         icon: 'tabler:brand-tailwind',
       },
       {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+        title: 'Ethical and Legal Recruitment',
+        description: 'In-depth profile evaluation with a critical, human-focused approach, free from illegal ties.',
         icon: 'tabler:components',
       },
       {
-        title: 'Best Practices',
+        title: 'Training and Certification',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          'Technical, legal, and ethical training to ensure professional performance and compliance with regulations for every worker.',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Constant Employer Support',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+          'Full visa management, necessary certifications, transportation, communication, and post-employment follow-up.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
+        title: 'Technology and Communication',
+        description: 'Digital platforms and innovative tools for effective coordination.',
         icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Social Commitment and Transparency',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+          'Partnerships only with companies that offer dignified jobs, under clear and responsible management.',
         icon: 'tabler:bulb',
       },
     ]}
@@ -105,33 +98,36 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Our Services"
+    title="Comprehensive Recruitment Process: The Foundation of Our Success"
     items={[
       {
-        title: 'Built on top of Astro 5.0',
+        title: 'Selection of Highly Qualified Candidates',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'We ensure a careful and precise selection, with verified profiles that meet the necessary legal and professional requirements.',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'Complete Profile Evaluation',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'We conduct detailed interviews, verify legal migration status, and review a detailed work history to ensure the candidate meets each employer’s requirements.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Visa and Documentation Management',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'We handle the complete visa process and documentation management to ensure workers can travel smoothly to the U.S. and Canada.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: reclu,
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Building Fair and Transparent Labor Relations
+      </h3>
+      Optimize your hiring process with a specialized team and a comprehensive service to ensure that your labor needs are
+      met efficiently and legally.
     </Fragment>
 
     <Fragment slot="bg">
@@ -145,31 +141,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'Ethical and Legal Recruitment',
+        description: `We ensure that every candidate meets all legal and ethical requirements, avoiding any illegal ties or immigration irregularities.`,
       },
       {
-        title: 'Multiple layout possibilities',
+        title: 'Detailed Profile Evaluation',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          'We conduct a thorough interview and validation process to ensure the selected workers are the most suitable for the position and the work environment.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'Transparency in Processes',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+          'We guarantee that all interactions and agreements are clear and legal, protecting both workers and employers, ensuring trust at all times.',
       },
       {
-        title: 'Integration of media',
+        title: 'Complete Training on Rights and Regulations',
         description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'We train each worker on the legal and regulatory aspects related to their position, ensuring proper performance and compliance with regulations in the U.S. and Canada.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: deal,
+      alt: 'Recruitment Image',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Ensure your team meets the highest standards of legality and ethics.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -183,31 +179,29 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Enhanced user engagement',
+        title: 'Constant Employer Support',
         description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+          'We provide complete support, managing all stages of the process from candidate selection to worker integration in the U.S. or Canada.',
       },
       {
-        title: 'Continuous improvement',
+        title: 'Transportation and Logistical Coordination',
         description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+          'From border transportation to job integration, we ensure the entire process runs smoothly and without setbacks.',
       },
       {
-        title: 'Time and resource efficiency',
+        title: 'Continuous Follow-Up During Employment',
         description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+          'We maintain constant communication with both employers and workers, ensuring that all needs are met and a stable, safe work environment is maintained.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: deal2,
+      alt: 'Employer Support Image',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">
+      Your ally at every step of the process, ensuring a successful and efficient labor transition.
+    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -217,40 +211,39 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Hire the Best Talent in 3 Simple Steps with H2WorkForce."
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        title: 'Step 1: <span class="font-medium">Needs Identification</span>',
+        description: 'We begin with a projection of needs, areas of opportunity, and requirements.',
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Step 2: <span class="font-medium">Evaluation and Training</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+          'We conduct a thorough evaluation of candidates and provide the necessary training, ensuring they are ready to perform their work according to your company’s standards and production processes.',
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 3: <span class="font-medium">Visa and Logistics Management</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+          'We handle the visa management, documentation, and the entire logistical process to ensure workers arrive at their destination safely and legally, ready to integrate into your team.',
         icon: 'tabler:paint',
       },
       {
-        title: 'Ready!',
+        title: 'Done!',
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: deal3,
+      alt: 'Hiring Process Image',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
@@ -310,69 +303,69 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 
-  <BlogLatestPosts
+  <!-- <BlogLatestPosts
     title="Find out more content in our Blog"
     information={`The blog is used to display AstroWind documentation.
                         Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                         Astro is a very interesting technology. Thanks.
                 `}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    subtitle="Explore the following questions to learn more about the services H2WorkForce offers and how we can help you hire talent efficiently and legally."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Why choose H2WorkForce?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'H2WorkForce specializes in providing tailored, legal solutions for temporary worker recruitment. With over 25 years of experience, we guarantee an ethical, efficient, and transparent process for both employers and workers.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'What do I need to start hiring?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'You need to define your company’s needs and understand your legal status for temporary hiring. We take care of everything else: from the legal and labor certifications your company may need for temporary workers to the selection of suitable candidates, ensuring the process is fully transparent and legally sound.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'How do you select candidates?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'We use a thorough process of interviews, background checks, and medical tests to ensure that each worker meets the required profile and is ready for work in the U.S. or Canada.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'What happens if workers don’t meet my expectations?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'We provide continuous follow-up for workers during their employment period. If a worker does not meet expectations, we work with the employer to find solutions and, if necessary, provide a replacement.',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: 'Does H2WorkForce also offer support during employment?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'Yes. We ensure constant communication between workers and employers, providing support in case of emergencies or extraordinary needs while workers are in the U.S. or Canada.',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: 'Do you offer guarantees for the visa process?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'Yes, we handle the entire work visa process, ensuring that the documents are complete and submitted correctly to avoid delays in the immigration process. We also ensure continuous improvement in results and production processes.',
       },
     ]}
   />
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <!-- <Stats
     stats={[
       { title: 'Downloads', amount: '132K' },
       { title: 'Stars', amount: '24.8K' },
       { title: 'Forks', amount: '10.3K' },
       { title: 'Users', amount: '48.4K' },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
@@ -380,20 +373,18 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'Contact Us',
+        href: 'mailto:ceo@h2-workforce.com',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:mail',
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+    <Fragment slot="title"> H2WorkForce&nbsp;+&nbsp;Your Binational Partner </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Are you ready to get started? <br class="hidden md:inline" />Contact us and find the best workers for your
+      business, or request more information to address any questions you may have. We're here to help!
     </Fragment>
   </CallToAction>
 </Layout>
