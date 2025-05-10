@@ -27,7 +27,7 @@ import deal3 from '~/assets/images/farmer.avif';
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero image={{ src: heroImage, alt: 'H2WorkForce' }}>
+  <Hero image={{ src: heroImage, alt: 'H2WorkForce' }} id='hero'>
     <Fragment slot="title">
       We connect <span class="hidden xl:inline">Mexican workers with</span>
       <span class="text-accent dark:text-white"> employers in the U.S. and Canada</span>
@@ -53,7 +53,7 @@ import deal3 from '~/assets/images/farmer.avif';
   <!-- Features Widget *************** -->
 
   <Features
-    id="features"
+    id="pillars"
     tagline="Our Pillars"
     title="What Sets H2WorkForce Apart"
     subtitle="A binational company committed to legal, safe, and human processes that connect Mexican workers with employers in the U.S. and Canada."
@@ -97,6 +97,7 @@ import deal3 from '~/assets/images/farmer.avif';
   <!-- Content Widget **************** -->
 
   <Content
+    id='services'
     isReversed
     tagline="Our Services"
     title="Comprehensive Recruitment Process: The Foundation of Our Success"
@@ -211,6 +212,7 @@ import deal3 from '~/assets/images/farmer.avif';
   <!-- Steps Widget ****************** -->
 
   <Steps
+    id='steps'
     title="Hire the Best Talent in 3 Simple Steps with H2WorkForce."
     items={[
       {
@@ -318,6 +320,7 @@ import deal3 from '~/assets/images/farmer.avif';
   <!-- FAQs Widget ******************* -->
 
   <FAQs
+    id='faqs'
     title="Frequently Asked Questions"
     subtitle="Explore the following questions to learn more about the services H2WorkForce offers and how we can help you hire talent efficiently and legally."
     tagline="FAQs"
