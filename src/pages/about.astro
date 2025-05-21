@@ -1,0 +1,141 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About us"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">
+      A binational team <br />
+      <span class="text-accent dark:text-white">committed to ethical and legal recruitment</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      At H2WorkForce, we connect Mexican talent with employers in the U.S. and Canada through transparent, dignified,
+      and legally compliant processes. With over 25 years of experience, we focus on building long-term relationships
+      based on trust, training, and social responsibility.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Who We Are"
+    subtitle="With over 25 years of experience, we are a binational team that connects Mexican talent with dignified job opportunities in the U.S. and Canada."
+    isReversed
+    items={[
+      {
+        title: 'A Proven Track Record',
+        description:
+          'Through our Mexican affiliates, we’ve built a solid reputation among municipal and state authorities for our reliability and professionalism in recruitment and selection. Our experience allows us to streamline processes while maintaining rigorous standards.',
+      },
+      {
+        title: 'Human-Centered Recruitment',
+        description: `We go beyond the job profile. We actively engage with each worker’s social and family context to ensure a healthy, transparent, and responsible hiring process — one that creates long-term, positive outcomes for all parties involved.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      alt: 'Recruitment Team at Work',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Commitment Built Over Decades <br /><span class="text-2xl">Experience That Creates Impact</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our Core Values"
+    subtitle="We believe in building ethical, transparent, and human-centered labor connections that generate mutual growth and long-term impact."
+    items={[
+      {
+        title: 'Humanism and Social Responsibility',
+        description:
+          'We recognize the dignity of every worker and promote a recruitment process that respects their rights, background, and family context. Our work is rooted in empathy and inclusion.',
+      },
+      {
+        title: 'Legality and Transparency',
+        description:
+          'Every action we take complies with labor and migration laws in both Mexico and the United States/Canada. We work only with companies that offer dignified and legal employment.',
+      },
+      {
+        title: 'Long-Term Commitment',
+        description:
+          'We don’t just connect people with jobs—we build relationships. Through re-hiring programs and continuous support, we foster a culture of loyalty and mutual development.',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our Achievements"
+    subtitle="With over two decades of experience, we’ve earned the trust of employers, institutions, and thousands of workers on both sides of the border."
+    isReversed={true}
+    items={[
+      {
+        title: 'Binational Presence',
+        description:
+          'We operate through a solid structure with representation in both Mexico and the United States, allowing us to manage recruitment, logistics, and follow-up efficiently.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Thousands of Workers Successfully Placed',
+        description:
+          'We have connected hundreds of employers with qualified, reliable Mexican workers, covering key industries like agriculture, construction, healthcare, and more.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Recognized by Authorities and Clients',
+        description:
+          'Our affiliates in Mexico are widely acknowledged by municipal and state authorities for their professionalism, and we maintain long-term partnerships with ethical employers.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Personalized Support"
+    tagline="We're here for you"
+    columns={2}
+    items={[
+      {
+        title: 'Support for Workers and Families',
+        description:
+          'We maintain ongoing communication with our workers and their families throughout the employment period. Our team is ready to assist in emergencies or special needs during their stay abroad.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Assistance for Employers',
+        description:
+          'Our support extends to every stage of the process—from recruitment to post-employment follow-up. We ensure smooth coordination and are always available to resolve any issue quickly and efficiently.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>
