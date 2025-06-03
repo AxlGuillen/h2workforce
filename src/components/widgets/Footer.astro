@@ -96,8 +96,22 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         )
       }
 
-      <div class="text-sm mr-4 dark:text-muted">
+      <div class="text-sm mr-4 dark:text-muted gap-2 flex flex-col md:flex-row">
         <Fragment set:html={footNote} />
+        <div class="text-sm text-muted flex gap-1">
+          {
+            secondaryLinks.map(({ text, href }, index) => (
+              <>
+                {index !== 0 ? ' · ' : ''}
+                <a
+                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+                  href={href}
+                  set:html={text}
+                />
+              </>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

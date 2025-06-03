@@ -23,6 +23,10 @@ export const headerData = {
       text: 'FAQs',
       href: getPermalink('/#faqs'),
     },
+    {
+      text: 'About us',
+      href: getPermalink('/about'),
+    },
   ],
   actions: [{ text: 'Contact Us', href: 'mailto:ceo@h2-workforce.com', target: '_blank' }],
 };
@@ -55,7 +59,10 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [],
+  secondaryLinks: [
+    { text: 'Terms', href: getPermalink('/terms') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+  ],
   socialLinks: [
     {
       ariaLabel: 'Facebook',
