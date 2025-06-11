@@ -12,7 +12,7 @@ const {
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
-
+  classes = {},
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
@@ -48,7 +48,7 @@ const {
           {
             subtitle && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+                class={`text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${classes?.subtitle ?? ''}`}
                 set:html={subtitle}
               />
             )
