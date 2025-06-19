@@ -65,10 +65,5 @@
     overflow: hidden;
 }
 
-.swiper-pagination-bullet-active {
-    opacity: var(--swiper-pagination-bullet-opacity, 1);
-    background: var(--swiper-pagination-color, #ff5311);
-}
-
 </style>
   
