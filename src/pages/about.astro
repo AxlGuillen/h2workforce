@@ -1,6 +1,6 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Hero4 from '~/components/widgets/Hero4.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -9,31 +9,24 @@ const metadata = {
   title: 'About us',
 };
 
-import workforce from '~/assets/images/1.avif';
 import workforce2 from '~/assets/images/4.avif';
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: workforce,
-      alt: 'Caos Image',
-    }}
-  >
+  <Hero4 tagline="About us">
     <Fragment slot="title">
       A binational team <br />
       <span class="text-accent dark:text-white">committed to ethical and legal recruitment</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      At H2WorkForce, we connect Mexican talent with employers in the U.S. and Canada through transparent, dignified,
-      and legally compliant processes. With over 25 years of experience, we focus on building long-term relationships
-      based on trust, training, and social responsibility.
+      we connect Mexican talent with employers in the U.S. and Canada through transparent, dignified, and legally
+      compliant processes. With over 25 years of experience, we focus on building long-term relationships based on
+      trust, training, and social responsibility.
     </Fragment>
-  </Hero>
+  </Hero4>
 
   <!-- Content Widget **************** -->
 
@@ -59,6 +52,7 @@ import workforce2 from '~/assets/images/4.avif';
     imageClass="rounded-full max-w-xl"
     classes={{
       subtitle: 'text-red-500',
+      container: 'motion-safe:md:intersect:animate-fade-left',
     }}
   >
     <Fragment slot="content">

@@ -1,6 +1,6 @@
 ---
-import SwiperSlider from '~/components/custom/SwiperHeaderSlider.vue';
-// import SwiperSlider from '~/components/custom/SwiperHeaderSlider2.vue';
+// import SwiperSlider from '~/components/custom/SwiperHeaderSlider.vue';
+import SwiperSlider from '~/components/custom/SwiperHeaderSlider2.vue';
 
 import Button from '~/components/ui/Button.astro';
 
@@ -51,7 +51,7 @@ const {
             <p
                 class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
             >
-                <span class="font-semibold">H2WorkForce </span>
+                <span class="font-semibold">At H2WorkForce,</span>
                 <span id="typewriter-sub" class="typewriter"></span>
             </p>
             <span
@@ -99,7 +99,7 @@ const {
   
       let raw = source.innerText || source.textContent || '';
 
-      raw = raw.replace(/^H2WorkForce\s*/i, '').trim();
+      raw = raw.replace(/^At H2WorkForce,\s*/i, '').trim();
   
       let i = 0;
       const speed = 35;

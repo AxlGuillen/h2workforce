@@ -23,6 +23,7 @@ export default {
         fade: 'fadeInUp 1s both',
         'fade-left': 'fadeInLeft 0.9s both',
         'fade-right': 'fadeInRight 0.9s both',
+        wave: 'wave 1.5s ease-in-out infinite',
       },
 
       keyframes: {
@@ -37,6 +38,10 @@ export default {
         fadeInRight: {
           '0%': { opacity: 0, transform: 'translateX( 2rem)' },
           '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
+        wave: {
+          '0%,100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-0.15em)' },
         },
       },
     },

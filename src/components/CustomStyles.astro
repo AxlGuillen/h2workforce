@@ -65,4 +65,10 @@ import '@fontsource-variable/inter';
     opacity: var(--swiper-pagination-bullet-opacity, 1);
     background: var(--swiper-pagination-color, #ff5311) !important;
   }
+
+  .wave-text span {
+    display: inline-block;
+    animation: wave 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--w-index) * 0.1s);
+  }
 </style>
