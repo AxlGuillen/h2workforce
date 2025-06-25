@@ -23,10 +23,10 @@
       :modules="modules"
       class="mySwiper5"
     >
-      <swiper-slide v-for="n in 7" :key="n">
+      <swiper-slide v-for="n in 5" :key="n">
         <img
-          :src="getImage(n)"
-          :alt="`Slide ${n}`"
+          :src="getImage(n + 5)"
+          :alt="`Slide ${n + 5}`"
           class="w-full h-full object-cover rounded-lg"
         />
       </swiper-slide>

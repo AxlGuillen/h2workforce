@@ -23,7 +23,7 @@
       :modules="modules"
       class="mySwiper4"
     >
-      <swiper-slide v-for="n in 7" :key="n">
+      <swiper-slide v-for="n in 5" :key="n">
         <img
           :src="getImage(n)"
           :alt="`Slide ${n}`"
