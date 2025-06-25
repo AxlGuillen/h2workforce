@@ -18,11 +18,14 @@ const metadata = {
 };
 
 // import heroImage from '~/assets/images/hero-image.avif';
-import collage from '~/assets/images/collage.avif';
+// import collage from '~/assets/images/collage.avif';
 // import reclu from '~/assets/images/9.avif';
-import deal from '~/assets/images/10.avif';
-import deal2 from '~/assets/images/collage2.png';
-import deal3 from '~/assets/images/4.avif';
+// import deal from '~/assets/images/10.avif';
+// import deal2 from '~/assets/images/collage2.png';
+import deal3 from '~/assets/images/slider/14.webp';
+import c1 from '~/assets/images/slider/11.webp';
+import c2 from '~/assets/images/slider/12.webp';
+import c3 from '~/assets/images/slider/13.webp';
 ---
 
 <Layout metadata={metadata}>
@@ -120,8 +123,8 @@ import deal3 from '~/assets/images/4.avif';
       },
     ]}
     image={{
-      src: collage,
-      alt: 'Collage Image',
+      src: c1,
+      alt: 'Girl working Image',
     }}
     imageClass="rounded-2xl max-w-xl"
     classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
@@ -165,8 +168,8 @@ import deal3 from '~/assets/images/4.avif';
       },
     ]}
     image={{
-      src: deal,
-      alt: 'Recruitment Image',
+      src: c2,
+      alt: 'Men working in the grape',
     }}
     imageClass="rounded-2xl max-w-xl"
     classes={{ container: 'motion-safe:md:intersect:animate-fade-left' }}
@@ -201,10 +204,10 @@ import deal3 from '~/assets/images/4.avif';
       },
     ]}
     image={{
-      src: deal2,
-      alt: 'Employer Support Image',
+      src: c3,
+      alt: 'Men working in the grape 2 Image',
     }}
-    imageClass="max-w-[500px]"
+    imageClass="rounded-2xl max-w-xl"
     classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
   >
     <Fragment slot="content">
