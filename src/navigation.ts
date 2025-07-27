@@ -4,28 +4,37 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Start',
-      href: getPermalink('/#hero'),
-    },
-    {
-      text: 'Pillars',
-      href: getPermalink('/#pillars'),
-    },
-    {
-      text: 'Services',
-      href: getPermalink('/#services'),
-    },
-    {
-      text: 'Steps',
-      href: getPermalink('/#steps'),
-    },
-    {
-      text: 'FAQs',
-      href: getPermalink('/#faqs'),
+      text: 'Home',
+      links: [
+        {
+          text: 'Start',
+          href: getPermalink('/#hero'),
+        },
+        {
+          text: 'Pillars',
+          href: getPermalink('/#pillars'),
+        },
+        {
+          text: 'Services',
+          href: getPermalink('/#services'),
+        },
+        {
+          text: 'Steps',
+          href: getPermalink('/#steps'),
+        },
+        {
+          text: 'FAQs',
+          href: getPermalink('/#faqs'),
+        },
+      ],
     },
     {
       text: 'About us',
       href: getPermalink('/about'),
+    },
+    {
+      text: 'Blog',
+      href: getPermalink('/blog'),
     },
   ],
   actions: [{ text: 'Contact Us', href: 'mailto:ceo@h2-workforce.com', target: '_blank' }],
