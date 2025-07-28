@@ -7,7 +7,6 @@
     :loop="true"
     :showCursor="true"
     :cursorCharacter="'|'"
-    :textColors="['#101010a8']"
   />
 </template>
 

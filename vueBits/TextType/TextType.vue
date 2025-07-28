@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
     :class="`inline-block whitespace-pre-wrap tracking-tight ${className}`"
     v-bind="$attrs"
   >
-    <span  :style="{ color: getCurrentTextColor() }">
+    <span>
       {{ displayedText }}
     </span>
     <span
