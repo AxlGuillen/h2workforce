@@ -1,7 +1,7 @@
 ---
 // import SwiperSlider from '~/components/custom/SwiperHeaderSlider.vue';
 import SwiperSlider from '~/components/custom/SwiperHeaderSlider2.vue';
-
+import TextTypeWrapper from '~/components/custom/TextType.vue';
 import Button from '~/components/ui/Button.astro';
 
 import type { Hero as Props } from '~/types';
@@ -51,14 +51,8 @@ const {
             <p
                 class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
             >
-                <span class="font-semibold">At H2WorkForce,</span>
-                <span id="typewriter-sub" class="typewriter"></span>
+                <TextTypeWrapper text={subtitle} client:only="vue" />
             </p>
-            <span
-                id="subtitle-source"
-                style="display:none;"
-                set:html={subtitle}
-            ></span>
             )
           }
 
@@ -90,28 +84,3 @@ const {
     </div>
   </div>
 </section>
-
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-      const source = document.getElementById('subtitle-source');
-      const target = document.getElementById('typewriter-sub');
-      if (!source || !target) return;
-  
-      let raw = source.innerText || source.textContent || '';
-
-      raw = raw.replace(/^At H2WorkForce\s*/i, '').trim();
-  
-      let i = 0;
-      const speed = 35;
-  
-      const type = () => {
-        if (i < raw.length) {
-          target.textContent += raw.charAt(i++);
-          setTimeout(type, speed);
-        }
-      };
-  
-      type();
-    });
-  </script>
-
