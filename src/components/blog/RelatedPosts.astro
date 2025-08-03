@@ -13,6 +13,9 @@ export interface Props {
 const { post } = Astro.props;
 
 const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
+const url = new URL(Astro.request.url);
+const segments = url.pathname.split('/');
+const lang = segments[1] === 'es' ? 'es' : 'en';
 ---
 
 {
@@ -24,7 +27,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
       }}
       title="Related Posts"
       linkText="View All Posts"
-      linkUrl={getBlogPermalink()}
+      linkUrl={getBlogPermalink(lang)}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null

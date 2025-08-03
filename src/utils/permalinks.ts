@@ -39,7 +39,7 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', type = 'page', lang: 'en' | 'es' = 'en'): string => {
   let permalink: string;
 
   if (
@@ -58,7 +58,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = BLOG_BASE;
       break;
 
     case 'asset':
@@ -83,14 +83,16 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
   }
 
-  return definitivePermalink(permalink);
+  return definitivePermalink(permalink, lang);
 };
 
 /** */
 export const getHomePermalink = (): string => getPermalink('/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getBlogPermalink = (lang: 'en' | 'es'): string => {
+  return definitivePermalink(BLOG_BASE, lang);
+};
 
 /** */
 export const getAsset = (path: string): string =>
@@ -101,8 +103,11 @@ export const getAsset = (path: string): string =>
     .join('/');
 
 /** */
-const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);
-
+const definitivePermalink = (permalink: string, lang: 'en' | 'es'): string => {
+  const trimmed = trimSlash(permalink);
+  const alreadyPrefixed = trimmed.startsWith(`${lang}/`) || trimmed === lang;
+  return alreadyPrefixed ? createPath(BASE_PATHNAME, trimmed) : createPath(BASE_PATHNAME, lang, trimmed);
+};
 /** */
 export const applyGetPermalinks = (menu: object = {}) => {
   if (Array.isArray(menu)) {
@@ -117,7 +122,7 @@ export const applyGetPermalinks = (menu: object = {}) => {
           if (menu[key].type === 'home') {
             obj[key] = getHomePermalink();
           } else if (menu[key].type === 'blog') {
-            obj[key] = getBlogPermalink();
+            obj[key] = getBlogPermalink('es');
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {

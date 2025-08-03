@@ -10,7 +10,7 @@ import Pagination from '~/components/blog/Pagination.astro';
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
-  return await getStaticPathsBlogTag({ paginate });
+  return await getStaticPathsBlogTag({ paginate }, 'en');
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;

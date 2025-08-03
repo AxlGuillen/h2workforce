@@ -13,6 +13,7 @@ author: "H2 Work Force"
 image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 metadata:
   canonical: "https://h2workforce.com/blog/h2-legal-solution-benefits"
+lang: "en"
 ---
 
 ## What is the H-2 Program?

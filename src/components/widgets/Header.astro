@@ -45,6 +45,10 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+const pathname = new URL(Astro.url).pathname;
+const lang = pathname.startsWith('/es') ? 'es' : 'en';
+const altLang = lang === 'en' ? 'es' : 'en';
+const alternatePath = pathname.replace(/^\/(en|es)/, `/${altLang}`);
 ---
 
 <header
@@ -149,6 +153,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               </a>
             )
           }
+          <a
+            href={alternatePath}
+            aria-label={lang === 'en' ? 'Ver en español' : 'View in English'}
+            class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+          >
+            <Icon name="tabler:language" class="w-5 h-5" />
+            <span class="ml-1 text-sm font-medium hidden md:inline">{altLang.toUpperCase()}</span>
+          </a>
         </div>
         {
           actions?.length ? (

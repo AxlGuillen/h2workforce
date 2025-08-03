@@ -16,10 +16,14 @@ export interface Props extends Widget {
   postIds: string[];
 }
 
+const url = new URL(Astro.request.url);
+const segments = url.pathname.split('/');
+const lang = segments[1] === 'es' ? 'es' : 'en';
+
 const {
   title = await Astro.slots.render('title'),
   linkText = 'View all posts',
-  linkUrl = getBlogPermalink(),
+  linkUrl = getBlogPermalink(lang),
   information = await Astro.slots.render('information'),
   postIds = [],
 

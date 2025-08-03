@@ -1,0 +1,284 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero3 from '~/components/widgets/Hero3.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'H2WorkForce',
+  ignoreTitleTemplate: true,
+};
+
+import c1 from '~/assets/images/slider/11.webp';
+import c2 from '~/assets/images/slider/12.webp';
+import c3 from '~/assets/images/slider/13.webp';
+---
+
+<Layout metadata={metadata}>
+  <Hero3 id="hero">
+    <Fragment slot="title">
+      Conectamos <span class="hidden xl:inline">trabajadores mexicanos con</span>
+      <span class="text-accent dark:text-white"> empleadores en EE. UU. y Canadá</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      H2WorkForce es una firma binacional especializada en la contratación legal y profesional de trabajadores
+      temporales, con enfoque en la seguridad, transparencia y responsabilidad social. Reclutamiento confiable, seguro y
+      humano. Ideal para los sectores agrícola, ganadero, de la construcción, salud y servicios profesionales.
+    </Fragment>
+  </Hero3>
+
+  <Note
+    title="Filosofía:"
+    description="Humanismo, legalidad y compromiso con el empleo digno y seguro a nivel binacional."
+  />
+
+  <Features
+    id="pillars"
+    tagline="Nuestros Pilares"
+    title="Lo que distingue a H2WorkForce"
+    subtitle="Una empresa binacional comprometida con procesos legales, seguros y humanos que conectan trabajadores mexicanos con empleadores en EE. UU. y Canadá."
+    items={[
+      {
+        title: 'Proceso de Reclutamiento Integral',
+        description:
+          'Desde la detección de necesidades hasta la llegada del trabajador, garantizando legalidad y eficiencia.',
+        icon: 'tabler:automation',
+      },
+      {
+        title: 'Reclutamiento Ético y Legal',
+        description:
+          'Evaluación profunda del perfil con un enfoque crítico y humano, libre de intermediarios ilegales.',
+        icon: 'tabler:user-search',
+      },
+      {
+        title: 'Capacitación y Certificación',
+        description:
+          'Formación técnica, legal y ética para garantizar un desempeño profesional y cumplimiento normativo.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Acompañamiento Constante al Empleador',
+        description: 'Gestión completa de visas, certificaciones, transporte, comunicación y seguimiento post-empleo.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Tecnología y Comunicación',
+        description: 'Plataformas digitales y herramientas innovadoras para una coordinación eficaz.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Compromiso Social y Transparencia',
+        description: 'Alianzas sólo con empresas que ofrecen empleos dignos, bajo una gestión clara y responsable.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Content
+    id="services"
+    isReversed
+    tagline="Nuestros Servicios"
+    title="Proceso de Reclutamiento Integral: La Base de Nuestro Éxito"
+    items={[
+      {
+        title: 'Selección de Candidatos Altamente Calificados',
+        description:
+          'Garantizamos una selección cuidadosa y precisa, con perfiles verificados que cumplen los requisitos legales y profesionales.',
+      },
+      {
+        title: 'Evaluación Completa de Perfil',
+        description:
+          'Realizamos entrevistas detalladas, verificación de estatus migratorio y revisión de historial laboral para asegurar compatibilidad con los requisitos del empleador.',
+      },
+      {
+        title: 'Gestión de Visa y Documentación',
+        description:
+          'Nos encargamos del proceso completo de visa y documentación para asegurar que el trabajador viaje sin contratiempos a EE. UU. o Canadá.',
+      },
+    ]}
+    image={{
+      src: c1,
+      alt: 'Imagen de mujer trabajando',
+    }}
+    imageClass="rounded-2xl max-w-xl"
+    classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Construyendo relaciones laborales justas y transparentes
+      </h3>
+      Optimiza tu proceso de contratación con un equipo especializado y un servicio integral que garantiza cubrir tus necesidades
+      laborales de manera eficiente y legal.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Reclutamiento Ético y Legal',
+        description: `Aseguramos que cada candidato cumpla con todos los requisitos legales y éticos, evitando vínculos ilegales o irregularidades migratorias.`,
+      },
+      {
+        title: 'Evaluación Detallada de Perfiles',
+        description:
+          'Aplicamos un proceso riguroso de entrevista y validación para seleccionar a los trabajadores más adecuados para el puesto y el entorno laboral.',
+      },
+      {
+        title: 'Transparencia en los Procesos',
+        description:
+          'Garantizamos que todos los acuerdos sean claros y legales, protegiendo tanto a trabajadores como empleadores y fomentando la confianza.',
+      },
+      {
+        title: 'Capacitación en Derechos y Regulaciones',
+        description:
+          'Capacitamos a cada trabajador sobre los aspectos legales y regulatorios relacionados con su puesto, asegurando el cumplimiento en EE. UU. y Canadá.',
+      },
+    ]}
+    image={{
+      src: c2,
+      alt: 'Hombres trabajando en la vid',
+    }}
+    imageClass="rounded-2xl max-w-xl"
+    classes={{ container: 'motion-safe:md:intersect:animate-fade-left' }}
+  >
+    <Fragment slot="content">Asegura que tu equipo cumpla con los más altos estándares de legalidad y ética.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Acompañamiento Constante al Empleador',
+        description:
+          'Brindamos apoyo integral en todas las etapas: desde la selección del candidato hasta su integración en EE. UU. o Canadá.',
+      },
+      {
+        title: 'Coordinación de Transporte y Logística',
+        description:
+          'Desde el traslado hasta la integración laboral, aseguramos que el proceso fluya sin contratiempos.',
+      },
+      {
+        title: 'Seguimiento Durante la Estadía',
+        description:
+          'Mantenemos comunicación constante con empleadores y trabajadores para asegurar un entorno laboral estable y seguro.',
+      },
+    ]}
+    image={{
+      src: c3,
+      alt: 'Hombres trabajando en la vid 2',
+    }}
+    imageClass="rounded-2xl max-w-xl"
+    classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
+  >
+    <Fragment slot="content">
+      Tu aliado en cada paso del proceso, asegurando una transición laboral exitosa y eficiente.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps3
+    id="steps"
+    title="Contrata el Mejor Talento en 3 Pasos Simples con H2WorkForce."
+    items={[
+      {
+        title: 'Paso 1: <span class="font-medium">Identificación de Necesidades</span>',
+        description: 'Comenzamos con una proyección de necesidades, áreas de oportunidad y requisitos.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Paso 2: <span class="font-medium">Evaluación y Capacitación</span>',
+        description:
+          'Evaluamos a los candidatos y brindamos la formación necesaria para que cumplan con los estándares de tu empresa.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Paso 3: <span class="font-medium">Gestión de Visa y Logística</span>',
+        description:
+          'Nos encargamos de la documentación, gestión de visa y logística para asegurar que lleguen legal y preparados.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: '¡Listo!',
+        icon: 'tabler:check',
+      },
+    ]}
+  />
+
+  <FAQs
+    id="faqs"
+    title="Preguntas Frecuentes"
+    subtitle="Consulta las siguientes preguntas para conocer más sobre los servicios de H2WorkForce y cómo podemos ayudarte a contratar talento de forma eficiente y legal."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: '¿Por qué elegir H2WorkForce?',
+        description:
+          'Nos especializamos en brindar soluciones legales y personalizadas para la contratación temporal. Con más de 25 años de experiencia, garantizamos un proceso ético, eficiente y transparente.',
+      },
+      {
+        title: '¿Qué necesito para comenzar a contratar?',
+        description:
+          'Debes definir tus necesidades y conocer tu situación legal para contrataciones temporales. Nosotros nos encargamos del resto: certificaciones, selección de candidatos y legalidad en todo el proceso.',
+      },
+      {
+        title: '¿Cómo seleccionan a los candidatos?',
+        description:
+          'Aplicamos entrevistas, validaciones legales y médicas para garantizar que cada trabajador cumpla con el perfil requerido y esté listo para laborar en EE. UU. o Canadá.',
+      },
+      {
+        title: '¿Qué sucede si un trabajador no cumple con mis expectativas?',
+        description:
+          'Damos seguimiento continuo durante la estadía laboral. Si el trabajador no es adecuado, trabajamos contigo para solucionarlo o sustituirlo.',
+      },
+      {
+        title: '¿H2WorkForce da apoyo durante el empleo?',
+        description:
+          'Sí. Mantenemos comunicación constante con empleadores y trabajadores para resolver emergencias o necesidades extraordinarias.',
+      },
+      {
+        title: '¿Ofrecen garantías en el proceso de visa?',
+        description:
+          'Sí. Nos encargamos de la gestión completa del visado, asegurando documentación completa y evitando retrasos migratorios.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contáctanos',
+        href: 'mailto:ceo@h2-workforce.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title"> H2WorkForce&nbsp;+&nbsp;Tu Socio Binacional </Fragment>
+
+    <Fragment slot="subtitle">
+      ¿Listo para comenzar? <br class="hidden md:inline" />Contáctanos y encuentra a los mejores trabajadores para tu
+      empresa o solicita más información para resolver cualquier duda. ¡Estamos aquí para ayudarte!
+    </Fragment>
+  </CallToAction>
+</Layout>

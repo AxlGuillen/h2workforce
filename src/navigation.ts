@@ -1,76 +1,42 @@
 /* import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks'; */
 import { getPermalink } from './utils/permalinks';
 
-export const headerData = {
+
+export const getHeaderData = (lang: 'en' | 'es') => ({
   links: [
     {
-      text: 'Home',
-      links: [
-        {
-          text: 'Start',
-          href: getPermalink('/#hero'),
-        },
-        {
-          text: 'Pillars',
-          href: getPermalink('/#pillars'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/#services'),
-        },
-        {
-          text: 'Steps',
-          href: getPermalink('/#steps'),
-        },
-        {
-          text: 'FAQs',
-          href: getPermalink('/#faqs'),
-        },
-      ],
+      text: lang === 'es' ? 'Inicio' : 'Home',
+      href: getPermalink('/', 'page', lang),
     },
     {
-      text: 'About us',
-      href: getPermalink('/about'),
+      text: lang === 'es' ? 'Sobre nosotros' : 'About us',
+      href: getPermalink('/about', 'page', lang),
     },
     {
       text: 'Blog',
-      href: getPermalink('/blog'),
+      href: getPermalink('/blog', 'blog', lang),
     },
   ],
-  actions: [{ text: 'Contact Us', href: 'mailto:ceo@h2-workforce.com', target: '_blank' }],
-};
-
-export const footerData = {
-  links: [
+  actions: [
     {
-      text: 'Home',
-      links: [
-        {
-          text: 'Start',
-          href: getPermalink('/#hero'),
-        },
-        {
-          text: 'Pillars',
-          href: getPermalink('/#pillars'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/#services'),
-        },
-        {
-          text: 'Steps',
-          href: getPermalink('/#steps'),
-        },
-        {
-          text: 'FAQs',
-          href: getPermalink('/#faqs'),
-        },
-      ],
+      text: lang === 'es' ? 'Contáctanos' : 'Contact Us',
+      href: 'mailto:ceo@h2-workforce.com',
+      target: '_blank',
     },
   ],
+});
+
+export const getFooterData = (lang: 'en' | 'es') => ({
+  links: [],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    {
+      text: lang === 'es' ? 'Términos' : 'Terms',
+      href: getPermalink('/terms', 'page', lang),
+    },
+    {
+      text: lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy',
+      href: getPermalink('/privacy', 'page', lang),
+    },
   ],
   socialLinks: [
     {
@@ -79,7 +45,8 @@ export const footerData = {
       href: 'https://www.facebook.com/H2WorkForceOficial?rdid=ihAWB0ukMhxhnqoK&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16NThM6HEp%2F#',
     },
   ],
-  footNote: `
-    © 2025 H2WorkForce - All rights reserved.
-  `,
-};
+  footNote:
+    lang === 'es'
+      ? '© 2025 H2WorkForce - Todos los derechos reservados.'
+      : '© 2025 H2WorkForce - All rights reserved.',
+});

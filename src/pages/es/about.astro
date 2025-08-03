@@ -1,0 +1,148 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero4 from '~/components/widgets/Hero4.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Sobre nosotros',
+};
+
+import workforce2 from '~/assets/images/slider/15.webp';
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero4 tagline="Sobre nosotros">
+    <Fragment slot="title">
+      Un equipo binacional <br />
+      <span class="text-accent dark:text-white">comprometido con el reclutamiento ético y legal</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      En H2WorkForce, conectamos el talento mexicano con empleadores en Estados Unidos y Canadá mediante procesos
+      transparentes, dignos y alineados a la ley. Con más de 25 años de experiencia, nos enfocamos en construir
+      relaciones a largo plazo basadas en la confianza, la capacitación y la responsabilidad social.
+    </Fragment>
+  </Hero4>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Quiénes somos"
+    subtitle="Con más de 25 años de experiencia, somos un equipo binacional que conecta el talento mexicano con oportunidades laborales dignas en Estados Unidos y Canadá."
+    isReversed
+    items={[
+      {
+        title: 'Una Trayectoria Comprobada',
+        description:
+          'A través de nuestras afiliadas en México, hemos construido una sólida reputación ante autoridades municipales y estatales por nuestra confiabilidad y profesionalismo en el reclutamiento y selección. Nuestra experiencia nos permite agilizar procesos sin perder calidad.',
+      },
+      {
+        title: 'Reclutamiento con Enfoque Humano',
+        description: `Vamos más allá del perfil laboral. Nos involucramos activamente en el contexto social y familiar de cada trabajador para asegurar un proceso de contratación sano, transparente y responsable que genere resultados positivos a largo plazo.`,
+      },
+    ]}
+    image={{
+      src: workforce2,
+      alt: 'Equipo de reclutamiento en acción',
+    }}
+    imageClass="rounded-full max-w-xl"
+    classes={{
+      subtitle: 'text-red-500',
+      container: 'motion-safe:md:intersect:animate-fade-left',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Compromiso construido a lo largo de décadas <br /><span class="text-2xl">Experiencia que genera impacto</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Nuestros Valores"
+    subtitle="Creemos en construir vínculos laborales éticos, transparentes y centrados en las personas que generen crecimiento mutuo e impacto a largo plazo."
+    items={[
+      {
+        title: 'Humanismo y Responsabilidad Social',
+        description:
+          'Reconocemos la dignidad de cada trabajador y promovemos un proceso de reclutamiento que respete sus derechos, su historia y su contexto familiar. Nuestro trabajo se basa en la empatía y la inclusión.',
+      },
+      {
+        title: 'Legalidad y Transparencia',
+        description:
+          'Cada acción que realizamos cumple con las leyes laborales y migratorias de México, Estados Unidos y Canadá. Solo trabajamos con empresas que ofrecen empleos legales y dignos.',
+      },
+      {
+        title: 'Compromiso a Largo Plazo',
+        description:
+          'No solo conectamos personas con empleos, construimos relaciones. A través de programas de recontratación y seguimiento continuo, fomentamos una cultura de lealtad y desarrollo mutuo.',
+      },
+    ]}
+    classes={{
+      subtitle: 'text-muted',
+    }}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Nuestros Logros"
+    subtitle="Con más de dos décadas de experiencia, hemos ganado la confianza de empleadores, instituciones y miles de trabajadores en ambos lados de la frontera."
+    isReversed={true}
+    items={[
+      {
+        title: 'Presencia Binacional',
+        description:
+          'Operamos con una estructura sólida y representación tanto en México como en Estados Unidos, lo que nos permite gestionar el reclutamiento, la logística y el seguimiento de forma eficiente.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Miles de Trabajadores Colocados Exitosamente',
+        description:
+          'Hemos conectado a cientos de empleadores con trabajadores mexicanos calificados y confiables en sectores clave como agricultura, construcción, salud, entre otros.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Reconocidos por Autoridades y Clientes',
+        description:
+          'Nuestras afiliadas en México son ampliamente reconocidas por autoridades municipales y estatales por su profesionalismo, y mantenemos alianzas a largo plazo con empleadores éticos.',
+        icon: 'tabler:award',
+      },
+    ]}
+    classes={{
+      subtitle: 'text-muted',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Atención Personalizada"
+    tagline="Estamos para ayudarte"
+    columns={2}
+    items={[
+      {
+        title: 'Apoyo para Trabajadores y Familias',
+        description:
+          'Mantenemos comunicación constante con nuestros trabajadores y sus familias durante todo el periodo laboral. Nuestro equipo está listo para atender emergencias o necesidades especiales durante su estancia en el extranjero.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Asistencia para Empleadores',
+        description:
+          'Nuestro acompañamiento abarca todas las etapas del proceso: desde el reclutamiento hasta el seguimiento posterior al empleo. Garantizamos una coordinación fluida y siempre estamos disponibles para resolver cualquier situación de forma rápida y eficiente.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>

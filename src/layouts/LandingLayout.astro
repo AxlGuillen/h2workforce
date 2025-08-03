@@ -2,7 +2,7 @@
 import PageLayout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 
-import { headerData } from '~/navigation';
+import { getHeaderData } from '~/navigation';
 import type { MetaData } from '~/types';
 
 export interface Props {
@@ -10,6 +10,10 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/es') ? 'es' : 'en';
+
+const headerData = getHeaderData(lang);
 ---
 
 <PageLayout metadata={metadata}>
@@ -19,8 +23,8 @@ const { metadata } = Astro.props;
         links={headerData?.links[2] ? [headerData.links[2]] : undefined}
         actions={[
           {
-            text: 'Download',
-            href: 'https://github.com/onwidget/astrowind',
+            text: lang === 'en' ? 'ES' : 'EN',
+            href: lang === 'en' ? pathname.replace('/en', '/es') : pathname.replace('/es', '/en'),
           },
         ]}
         showToggleTheme
