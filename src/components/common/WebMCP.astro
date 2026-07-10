@@ -1,0 +1,112 @@
+---
+// WebMCP: expose the site's key information and navigation as tools that
+// browser-based AI agents can call through navigator.modelContext (WebMCP API).
+// Progressive enhancement: a no-op in browsers that don't implement the API.
+---
+
+<script>
+  const SITE = {
+    name: 'H2WorkForce',
+    url: 'https://h2workforce.com',
+    contactEmail: 'ceo@h2-workforce.com',
+    facebook: 'https://www.facebook.com/H2WorkForceOficial',
+    countries: ['United States', 'Canada'],
+    programs: ['H-2A (temporary agricultural)', 'H-2B (temporary non-agricultural)'],
+    sectors: ['Agriculture', 'Livestock', 'Construction', 'Healthcare', 'Professional services'],
+    description:
+      'H2WorkForce is a binational firm specializing in the legal and ethical recruitment of temporary international workers, connecting Mexican workers with employers in the United States and Canada through secure, federally regulated H-2 processes.',
+  };
+
+  const asText = (payload: unknown) => ({
+    content: [
+      {
+        type: 'text',
+        text: typeof payload === 'string' ? payload : JSON.stringify(payload, null, 2),
+      },
+    ],
+  });
+
+  const tools = [
+    {
+      name: 'get_company_overview',
+      description:
+        'Get an overview of H2WorkForce: what the company does, the visa programs it handles, the countries it serves and the languages available.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      async execute() {
+        return asText({
+          name: SITE.name,
+          description: SITE.description,
+          programs: SITE.programs,
+          countries: SITE.countries,
+          languages: ['en', 'es'],
+          website: SITE.url,
+        });
+      },
+    },
+    {
+      name: 'list_sectors',
+      description: 'List the industry sectors H2WorkForce recruits temporary workers for.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      async execute() {
+        return asText({ sectors: SITE.sectors });
+      },
+    },
+    {
+      name: 'get_contact_info',
+      description:
+        'Get how to contact H2WorkForce to hire temporary workers or ask about the H-2A / H-2B visa programs.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      async execute() {
+        return asText({
+          email: SITE.contactEmail,
+          facebook: SITE.facebook,
+          note: 'Email is the primary channel to request workers or start an H-2A/H-2B hiring process.',
+        });
+      },
+    },
+    {
+      name: 'open_page',
+      description: 'Navigate the current browser to a main section of the H2WorkForce website.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          section: {
+            type: 'string',
+            enum: ['home', 'about', 'blog'],
+            description: 'Which section to open.',
+          },
+          language: {
+            type: 'string',
+            enum: ['en', 'es'],
+            description: 'Language of the section (English or Spanish).',
+            default: 'en',
+          },
+        },
+        required: ['section'],
+        additionalProperties: false,
+      },
+      async execute({ section, language = 'en' }: { section: string; language?: string }) {
+        const paths: Record<string, string> = { home: '', about: '/about', blog: '/blog' };
+        const path = `/${language}${paths[section] ?? ''}`;
+        window.location.href = path;
+        return asText(`Navigating to ${path}`);
+      },
+    },
+  ];
+
+  function registerWebMCP() {
+    try {
+      const mc = (navigator as unknown as { modelContext?: { provideContext?: (c: unknown) => void } })
+        .modelContext;
+      if (mc && typeof mc.provideContext === 'function') {
+        mc.provideContext({ tools });
+      }
+    } catch {
+      /* WebMCP unavailable or registration rejected — ignore. */
+    }
+  }
+
+  // Register immediately and after every client-side (View Transitions) navigation.
+  registerWebMCP();
+  document.addEventListener('astro:page-load', registerWebMCP);
+</script>
