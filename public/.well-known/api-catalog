@@ -1,0 +1,21 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://h2workforce.com/",
+      "describedby": [
+        {
+          "href": "https://h2workforce.com/llms.txt",
+          "type": "text/markdown",
+          "title": "Agent-readable overview of H2 Work Force"
+        }
+      ],
+      "sitemap": [
+        {
+          "href": "https://h2workforce.com/sitemap-index.xml",
+          "type": "application/xml",
+          "title": "XML sitemap index"
+        }
+      ]
+    }
+  ]
+}

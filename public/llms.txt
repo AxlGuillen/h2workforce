@@ -1,0 +1,22 @@
+# H2 Work Force
+
+> H2 Work Force is a binational workforce-mobility firm that helps U.S. employers legally hire temporary and seasonal workers through the U.S. H-2A (agricultural) and H-2B (non-agricultural) visa programs, with full regulatory compliance and end-to-end recruitment support.
+
+H2 Work Force connects U.S. employers in agriculture, agribusiness, construction, food processing, hospitality, tourism, maintenance, landscaping and service industries with pre-screened Mexican workers under federally regulated H-2 programs. The site is bilingual: English content lives under /en and Spanish content under /es.
+
+## Core pages
+- [Home (English)](https://h2workforce.com/en): Company overview and services
+- [Home (Spanish)](https://h2workforce.com/es): Resumen de la empresa y servicios
+- [About (English)](https://h2workforce.com/en/about): Who we are and what we do
+- [About (Spanish)](https://h2workforce.com/es/about): Quiénes somos y qué hacemos
+
+## Blog
+- [Blog (English)](https://h2workforce.com/en/blog): Insights on H-2 hiring, labor mobility and workforce planning
+- [Blog (Spanish)](https://h2workforce.com/es/blog): Perspectivas sobre contratación H-2 y movilidad laboral
+
+## Machine-readable resources
+- [Sitemap index](https://h2workforce.com/sitemap-index.xml): All indexed URLs for both languages
+- [API catalog](https://h2workforce.com/.well-known/api-catalog): Linkset (RFC 9727) of machine-readable resources
+
+## Contact
+- Website: https://h2workforce.com

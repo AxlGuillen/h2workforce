@@ -1,2 +1,10 @@
+/*
+  Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </llms.txt>; rel="describedby"; type="text/markdown"
+  Link: </sitemap-index.xml>; rel="sitemap"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
