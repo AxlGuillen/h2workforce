@@ -1,0 +1,40 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "H2WorkForce Info Agent",
+  "description": "Answers questions about H2WorkForce: the H-2A/H-2B temporary worker recruitment it runs, the sectors and countries it serves, and how to contact the company.",
+  "url": "https://h2workforce.com/a2a",
+  "preferredTransport": "JSONRPC",
+  "supportedInterfaces": [
+    { "url": "https://h2workforce.com/a2a", "transport": "JSONRPC" }
+  ],
+  "additionalInterfaces": [
+    { "url": "https://h2workforce.com/a2a", "transport": "JSONRPC" }
+  ],
+  "version": "1.0.0",
+  "provider": {
+    "organization": "H2WorkForce",
+    "url": "https://h2workforce.com"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/plain"],
+  "skills": [
+    {
+      "id": "site-info",
+      "name": "Company information and contact",
+      "description": "Provides an H2WorkForce company overview, the H-2 visa programs and sectors it serves, and the official contact channels.",
+      "tags": ["h2workforce", "recruitment", "h-2a", "h-2b", "contact"],
+      "examples": [
+        "What does H2WorkForce do?",
+        "Which sectors do you recruit temporary workers for?",
+        "How do I contact H2WorkForce to hire workers?"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/plain"]
+    }
+  ]
+}

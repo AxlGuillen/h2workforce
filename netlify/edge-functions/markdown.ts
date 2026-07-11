@@ -53,6 +53,7 @@ export const config: Config = {
     '/_astro/*',
     '/decapcms/*',
     '/.well-known/*',
+    '/a2a',
     '/*.js',
     '/*.css',
     '/*.xml',
